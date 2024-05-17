@@ -39,7 +39,7 @@ $todos = $Get->getTodos();
 if (!empty($todos)) {
 	//If a todo item is present, print the card with item and edit, delete and mark done buttons
 	foreach ($todos as $todo) {
-		$todoId = $todo["id"];
+		$todoId = $todo["id"];	
 		$todoText = $todo["todo_text"];
 		$status = $todo["status"];
 		echo "<div class='todo-item " . ($status == 'done' ? 'done' : '') . "' data-id='$todoId'>
@@ -47,7 +47,7 @@ if (!empty($todos)) {
             <input type='text' class='edit-input' value='$todoText''>
             <div>
             	<button class='mark-done' data-id='$todoId'>Mark Done</button>
-              <button class='edit-todo'>Edit Todo</button>
+              <button class='edit-todo' data-id='$todoId'>Edit Todo</button>
               <button class='delete-todo' data-id='$todoId'>Delete</button>
             </div>
           </div>";
